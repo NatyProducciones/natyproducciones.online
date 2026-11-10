@@ -310,11 +310,13 @@ function App() {
             >
               <div className="visual-topline"><span>NY / EN VIVO</span><span className="live-dot" /> <span>SONIDO QUE CONECTA</span></div>
               <video
+                autoPlay
                 controls
+                loop
                 muted
                 playsInline
-                preload="metadata"
-                aria-label="Video promocional de NatyLaVoz Comercial"
+                preload="auto"
+                aria-label="Video promocional de NatyLaVoz Comercial en reproducción continua"
               >
                 <source src={mediaUrl('natylavoz-promocional.mp4')} type="video/mp4" />
                 Tu navegador no puede reproducir este video.
