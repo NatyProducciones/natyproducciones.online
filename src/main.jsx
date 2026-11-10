@@ -27,7 +27,7 @@ import './styles.css';
 
 const photos = [
   { src: 'photo-01.jpg', title: 'Micrófono en acción', type: 'foto' },
-  { src: 'photo-02.jpg', title: 'Pieza promocional NatyLaVoz', type: 'diseño' },
+  { src: 'natylavoz-promocional.mp4', title: 'Pieza promocional NatyLaVoz Comercial', type: 'video' },
   { src: 'photo-03.jpg', title: 'Presentación con micrófono', type: 'foto' },
   { src: 'photo-04.jpg', title: 'Espectáculo en vivo', type: 'foto' },
   { src: 'photo-05.jpg', title: 'Evento con público', type: 'foto' },
