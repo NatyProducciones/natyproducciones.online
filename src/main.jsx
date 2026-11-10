@@ -309,7 +309,16 @@ function App() {
               onPointerLeave={resetTilt}
             >
               <div className="visual-topline"><span>NY / EN VIVO</span><span className="live-dot" /> <span>SONIDO QUE CONECTA</span></div>
-              <img src="/media/photo-12.jpg" alt="Pieza promocional de NatyLaVoz Comercial" />
+              <video
+                controls
+                muted
+                playsInline
+                preload="metadata"
+                aria-label="Video promocional de NatyLaVoz Comercial"
+              >
+                <source src={mediaUrl('natylavoz-promocional.mp4')} type="video/mp4" />
+                Tu navegador no puede reproducir este video.
+              </video>
               <div className="visual-bottomline">
                 <span className="visual-icon"><Mic size={17} /></span>
                 <span><strong>Una voz para tu marca</strong><small>PUBLICIDAD CON PERSONALIDAD</small></span>
