@@ -51,9 +51,9 @@ const photos = [
 ];
 
 const videos = [
-  ...Array.from({ length: 7 }, (_, index) => ({
-    src: `video-${String(index + 1).padStart(2, '0')}.mp4`,
-    title: `Registro audiovisual ${String(index + 1).padStart(2, '0')}`,
+  ...[2, 3, 6, 7].map((number) => ({
+    src: `video-${String(number).padStart(2, '0')}.mp4`,
+    title: `Registro audiovisual ${String(number).padStart(2, '0')}`,
     type: 'video',
   })),
   { src: 'natylavoz-promocional.mp4', title: 'Pieza promocional NatyLaVoz Comercial', type: 'video' },
