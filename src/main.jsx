@@ -27,7 +27,6 @@ import './styles.css';
 
 const photos = [
   { src: 'photo-01.jpg', title: 'Micrófono en acción', type: 'foto' },
-  { src: 'natylavoz-promocional.mp4', title: 'Pieza promocional NatyLaVoz Comercial', type: 'video' },
   { src: 'photo-03.jpg', title: 'Presentación con micrófono', type: 'foto' },
   { src: 'photo-04.jpg', title: 'Espectáculo en vivo', type: 'foto' },
   { src: 'photo-05.jpg', title: 'Evento con público', type: 'foto' },
@@ -51,11 +50,16 @@ const photos = [
   { src: 'photo-23.jpg', title: 'Show en vivo', type: 'foto' },
 ];
 
-const videos = Array.from({ length: 7 }, (_, index) => ({
-  src: `video-${String(index + 1).padStart(2, '0')}.mp4`,
-  title: `Registro audiovisual ${String(index + 1).padStart(2, '0')}`,
-  type: 'video',
-}));
+const videos = [
+  ...Array.from({ length: 7 }, (_, index) => ({
+    src: `video-${String(index + 1).padStart(2, '0')}.mp4`,
+    title: `Registro audiovisual ${String(index + 1).padStart(2, '0')}`,
+    type: 'video',
+  })),
+  { src: 'natylavoz-promocional.mp4', title: 'Pieza promocional NatyLaVoz Comercial', type: 'video' },
+  { src: 'producto-en-local.mp4', title: 'Detalle de producto en un local', type: 'video' },
+  { src: 'activacion-promocional-microfono.mp4', title: 'Activación con micrófono en punto de venta', type: 'video' },
+];
 
 const portfolio = [...videos, ...photos];
 const mediaUrl = (file) => `${import.meta.env.BASE_URL}media/${file}`;
@@ -414,14 +418,14 @@ function App() {
           <div className="audio-card" data-reveal>
             <div className="audio-copy">
               <div className="eyebrow"><span className="eyebrow-dot" /> ESCUCHA UNA MUESTRA</div>
-              <h2>Para la gente linda<br /><span>de Jamundí, Valle.</span></h2>
-              <p>Una información que no te puedes perder.</p>
+              <h2>Un mensaje para<br /><span>la gente linda de Jamundí.</span></h2>
+              <p>Un saludo especial, con una voz cercana para compartir con la gente de Jamundí.</p>
               <div className="audio-meta"><span><Music size={14} /> MP3</span><span className="meta-separator" /><span>{formatDuration(audioDuration)}</span><span className="meta-separator" /><span>Reproducción manual</span></div>
             </div>
             <div className="audio-player">
               <div className="audio-player-head">
                 <span className="audio-art"><Mic size={22} /></span>
-                <div><span className="work-kicker">ARCHIVO DE AUDIO</span><strong>Para la gente linda de Jamundí</strong><small>Una información que no te puedes perder</small></div>
+                <div><span className="work-kicker">MENSAJE EN AUDIO</span><strong>Para la gente linda de Jamundí</strong><small>Escucha el mensaje completo</small></div>
                 <span className="audio-wave-icon"><Waves size={19} /></span>
               </div>
               <div className={`waveform ${audioReady ? 'waveform-ready' : ''}`} aria-hidden="true">
@@ -438,9 +442,9 @@ function App() {
                 onPlay={() => setAudioReady(true)}
                 onPause={() => setAudioReady(false)}
                 onEnded={() => setAudioReady(false)}
-                aria-label="Reproducir información para la gente linda de Jamundí"
+                aria-label="Reproducir mensaje para la gente linda de Jamundí"
               >
-                <source src={mediaUrl('jamundi-mp3.mp3')} type="audio/mpeg" />
+                <source src={mediaUrl('mensaje-jamundi.mp3')} type="audio/mpeg" />
                 Tu navegador no puede reproducir este audio.
               </audio>
               <div className="audio-player-foot"><span><span className="status-dot" /> LISTO PARA REPRODUCIR</span><span>{audioDuration === null ? 'ARCHIVO MP3' : `${formatDuration(audioDuration)} TOTAL`}</span></div>
