@@ -417,15 +417,15 @@ function App() {
         <section className="audio-section section-shell section-space" id="audio">
           <div className="audio-card" data-reveal>
             <div className="audio-copy">
-              <div className="eyebrow"><span className="eyebrow-dot" /> ESCUCHA UNA MUESTRA</div>
-              <h2>Un mensaje para<br /><span>la gente linda de Jamundí.</span></h2>
-              <p>Un saludo especial, con una voz cercana para compartir con la gente de Jamundí.</p>
+              <div className="eyebrow"><span className="eyebrow-dot" /> INFORMACIÓN QUE BRILLA</div>
+              <h2>Colombia, llegó<br /><span>la hora de brillar.</span></h2>
+              <p>Una voz cercana y llena de energía lleva el mensaje de Brilla para compartir información y conectar con personas en todo el país.</p>
               <div className="audio-meta"><span><Music size={14} /> MP3</span><span className="meta-separator" /><span>{formatDuration(audioDuration)}</span><span className="meta-separator" /><span>Reproducción manual</span></div>
             </div>
             <div className="audio-player">
               <div className="audio-player-head">
                 <span className="audio-art"><Mic size={22} /></span>
-                <div><span className="work-kicker">MENSAJE EN AUDIO</span><strong>Para la gente linda de Jamundí</strong><small>Escucha el mensaje completo</small></div>
+                <div><span className="work-kicker">VOZ COMERCIAL · BRILLA</span><strong>Un mensaje que ilumina</strong><small>Información para Colombia</small></div>
                 <span className="audio-wave-icon"><Waves size={19} /></span>
               </div>
               <div className={`waveform ${audioReady ? 'waveform-ready' : ''}`} aria-hidden="true">
@@ -442,7 +442,7 @@ function App() {
                 onPlay={() => setAudioReady(true)}
                 onPause={() => setAudioReady(false)}
                 onEnded={() => setAudioReady(false)}
-                aria-label="Reproducir mensaje para la gente linda de Jamundí"
+                aria-label="Reproducir mensaje de Brilla para Colombia"
               >
                 <source src={mediaUrl('mensaje-jamundi.mp3')} type="audio/mpeg" />
                 Tu navegador no puede reproducir este audio.
